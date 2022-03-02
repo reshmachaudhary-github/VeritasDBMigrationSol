@@ -14,7 +14,7 @@ block content
      
      }
   script.
-    var f2 = function() { request.post('https://192.168.1.38:7272/UploadToBlob', {form:{dataToupload:'DownloadedData'}}) }
+    var f2 = function() { request.put('https://192.168.1.38:7272/UploadToBlob', {form:{dataToupload:'DownloadedData'}}) }
   
 
   button(onclick='f1()') Get Data
