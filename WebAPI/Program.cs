@@ -16,7 +16,7 @@ app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/GetSQLDatabase", () =>
     {
-        string connectionString = "Server=tcp:mydatabaseforveritas.database.windows.net,1433;Initial Catalog=VeritasDatabase;Persist Security Info=False;User ID=reshma;Password=admin12345!@#$%;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string connectionString = "Server=tcp:mydatabaseforveritas.database.windows.net,1433;Initial Catalog=VeritasDatabase;Persist Security Info=False;User ID=reshma;Password=<password>;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         SqlConnection conn = new SqlConnection(connectionString);
         conn.Open();
         string dbname = conn.Database;
