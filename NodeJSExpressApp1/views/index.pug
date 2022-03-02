@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  script.
+    
+    var f1 = function() { 
+    var request = require('request');
+    request('https://192.168.1.38:7272/GetSQLDatabase', function (error, response, body) {
+    if (!error && response.statusCode === 200) {
+        console.log(body) // Print the google web page.
+     }}) 
+     
+     }
+  script.
+    var f2 = function() { request.post('https://192.168.1.38:7272/UploadToBlob', {form:{dataToupload:'DownloadedData'}}) }
+  
+
+  button(onclick='f1()') Get Data
+  button(onclick='f2()') Upload to Blob
+  p
+  
